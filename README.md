@@ -1,7 +1,5 @@
 
-<center>
-<img src='images/scrapy_tutorial.png'/>
-</center>
+<img align="center" src='images/scrapy_tutorial.png'/>
 
 <br>
 O [Scrapy](https://scrapy.org/) é um framework de código aberto escrito em python para web crawling e web scraping, em que deseja-se extrair dados estruturados de fontes não estruturadas, como páginas web.
@@ -10,18 +8,14 @@ O [Scrapy](https://scrapy.org/) é um framework de código aberto escrito em pyt
 
 Web crawlers são bots, spider bots, que percorrem páginas web indexando-as. Além poderem ser usados para fazer extração de dados dessas páginas, o que é chamado de web scraping.
 
-<center>
-<img src="images/Web-Crawling.jpg"/>
-</center>
+<img align="center" src="images/Web-Crawling.jpg"/>
 
 # Introdução
 
 Neste tutorial vamos aprender o funcionamento básico do Scrapy.<br>
 Para isso utilizaremos um simples exemplo, que consiste em retirar algumas informações sobre os 50 animes mais populares do site [MyAnimeList](https://myanimelist.net/topanime.php?type=bypopularity) e armazená-las em um arquivo JSON.
 
-<center>
-<img src="images/mal-populars.png" width="800"/>
-</center>
+<img align="center" src="images/mal-populars.png" width="800"/>
 
 # Instalando o Scrapy
 
@@ -53,17 +47,13 @@ scrapy startproject scrapy_anime_data
 
 Desta forma obtemos a pasta <font color="green">scrapy_anime_data</font> com os seguintes elementos:
 
-<center>
-<img src="images/estrutura.png" width="800"/>
-</center>
+<img align="center" src="images/estrutura.png" width="800"/>
 
 # Modelo de itens
 
 Para especificar os dados que queremos extrair é necessário definir no arquivo <font color="green">items.py</font> uma classe que irá conter os diferentes dados para cada item extraído. 
 
-<center>
-<img src="images/items.png"/>
-</center>
+<img align="center" src="images/items.png"/>
 
 # Criando spiders
 
@@ -104,15 +94,11 @@ def parse(self, response):
 Nesta função utilizaremos a linguagem [XPath](https://en.wikipedia.org/wiki/XPath) para caminhar pela página HTML retornada pelo parâmetro <i>response</i>.<br>
 Para facilitar o entendimento verifique como é feito o caminhamento em XPath no exemplo abaixo:
 
-<center>
-<img src="images/html_xpath.png" width="800"/>
-</center>
+<img align="center" src="images/html_xpath.png" width="800"/>
 
 Veja agora como podemos caminhar pela página que iremos extrair os dados:
 
-<center>
-<img src="images/mal_inspect.png" width="900"/>
-</center>
+<img align="center" src="images/mal_inspect.png" width="900"/>
 
 O XPath nos retorna o resultado como uma lista em formato HTML, logo se quisermos o texto contido no retorno é preciso usar a função <b>text()</b> e extrair o resultado da lista. Após a obtenção dos dados requeridos podemos armazená-los no modelo de itens anteriormente criado.<br>
 <br>
@@ -148,9 +134,7 @@ scrapy crawl anime_data -o result.json
 
 Quando o processo de extração terminar o arquivo <font color="green">result.json</font> estará dentro na pasta <font color="green">scrapy_anime_data/scrapy_anime_data/</font> com o resultado a seguir:
 
-<center>
-<img src="images/resultado.png"/>
-</center>
+<img align="center" src="images/resultado.png"/>
 
 # Considerações
 
